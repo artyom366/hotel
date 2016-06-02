@@ -1,0 +1,21 @@
+a:link {
+    text-decoration: none;
+}
+
+.user-alert {
+    margin:0;
+}
+
+/*Registration screen*/
+.capatcha {
+    text-align: center;
+}
+
+.g-recaptcha {
+    display: inline-block;
+}
+
+.registration-form-submit {
+    margin: 10px 0 0 0;
+    text-align: center;
+}
