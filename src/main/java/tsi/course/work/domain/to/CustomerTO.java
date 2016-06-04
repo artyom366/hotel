@@ -1,71 +1,54 @@
-package tsi.course.work.domain;
+package tsi.course.work.domain.to;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+
+import org.hibernate.validator.constraints.NotBlank;
 import tsi.course.work.contrants.data.Gender;
 
-import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.util.Date;
+import java.util.List;
 
-@Entity
-@Table(name = "customer")
-public class Customer {
+public class CustomerTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(name = "name")
+    @NotBlank
+    @Size(min = 1, max = 50)
     private String name;
 
-    @Column(name = "surname")
+    @NotBlank
+    @Size(min = 1, max = 50)
     private String surname;
 
-    @Column(name = "middle_name")
+    @Size(min = 1, max = 50)
     private String middleName;
 
-    @Column(name = "birth_date")
+    @NotNull
     private Date birthDate;
 
-    @Column(name = "gender")
+    @NotNull
     private Gender gender;
 
-    @Column(name = "accompanied")
+    @NotNull
     private Integer accompanied;
 
-    @Column(name = "identification_number")
+    @NotBlank
     private String identificationNumber;
 
-    @Column(name = "email")
+    @Pattern(regexp=".+@.+\\..+")
     private String email;
 
-    @Column(name = "phone")
+    @NotBlank
     private String phone;
 
-    @CreationTimestamp
-    @Column(name = "created")
-    private Date created;
-
-    @UpdateTimestamp
-    @Column(name = "updated")
-    private Date updated;
-
-    @Column(name = "check_in")
+    @NotNull
     private Date checkIn;
 
-    @Column(name = "check_out")
+    @NotNull
     private Date checkOut;
 
-    @Column(name = "is_active_customer")
-    private Boolean isActiveCustomer;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    private List<String> additionalServices;
+    private List<String> specialTreatment;
 
     public String getName() {
         return name;
@@ -139,26 +122,6 @@ public class Customer {
         this.phone = phone;
     }
 
-    public Date getCreated() {
-        return created;
-    }
-
-    public void setCreated(Date created) {
-        this.created = created;
-    }
-
-    public Date getUpdated() {
-        return updated;
-    }
-
-    public void setUpdated(Date updated) {
-        this.updated = updated;
-    }
-
-    public Boolean getActiveCustomer() {
-        return isActiveCustomer;
-    }
-
     public Date getCheckIn() {
         return checkIn;
     }
@@ -175,7 +138,19 @@ public class Customer {
         this.checkOut = checkOut;
     }
 
-    public void setActiveCustomer(Boolean activeCustomer) {
-        isActiveCustomer = activeCustomer;
+    public List<String> getAdditionalServices() {
+        return additionalServices;
+    }
+
+    public void setAdditionalServices(List<String> additionalServices) {
+        this.additionalServices = additionalServices;
+    }
+
+    public List<String> getSpecialTreatment() {
+        return specialTreatment;
+    }
+
+    public void setSpecialTreatment(List<String> specialTreatment) {
+        this.specialTreatment = specialTreatment;
     }
 }

@@ -1,6 +1,6 @@
 package tsi.course.work.domain;
 
-import tsi.course.work.contrants.Direction;
+import tsi.course.work.contrants.data.Direction;
 
 import javax.persistence.*;
 import java.util.Date;

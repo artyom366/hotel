@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="base.definition" template="/WEB-INF/views/main_layout.jsp">
+        <put-attribute name="title" value="ProQ"></put-attribute>
+        <put-attribute name="header" value=""></put-attribute>
+        <put-attribute name="menu" value=""></put-attribute>
+        <put-attribute name="body" value=""></put-attribute>
+        <put-attribute name="footer" value=""></put-attribute>
+    </definition>
+</tiles-definitions>

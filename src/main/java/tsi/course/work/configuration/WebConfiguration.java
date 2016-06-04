@@ -21,7 +21,7 @@ import org.springframework.web.servlet.view.tiles3.TilesView;
 @ComponentScan(basePackages = "tsi.course.work.")
 public class WebConfiguration extends WebMvcConfigurerAdapter {
 
-    @Bean
+    //@Bean
     public ViewResolver viewResolver() {
         InternalResourceViewResolver internalResourceViewResolver = new InternalResourceViewResolver();
         internalResourceViewResolver.setViewClass(JstlView.class);
@@ -43,7 +43,7 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
         return new CookieLocaleResolver();
     }
 
-    //@Bean
+    @Bean
     public TilesConfigurer tilesConfigurer() {
         TilesConfigurer tilesConfigurer = new TilesConfigurer();
         tilesConfigurer.setDefinitions("/WEB-INF/tiles/tiles.xml", "/WEB-INF/tiles/**/view.xml");
@@ -51,7 +51,7 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
         return tilesConfigurer;
     }
 
-    //@Bean
+    @Bean
     public UrlBasedViewResolver urlBasedViewResolver() {
         UrlBasedViewResolver viewResolver = new UrlBasedViewResolver();
         viewResolver.setViewClass(TilesView.class);

@@ -12,7 +12,7 @@ public class Services {
     private Long id;
 
     @Column(name = "services")
-    private Services services;
+    private String services;
 
     public Long getId() {
         return id;
@@ -22,11 +22,11 @@ public class Services {
         this.id = id;
     }
 
-    public Services getServices() {
+    public String getServices() {
         return services;
     }
 
-    public void setServices(Services services) {
+    public void setServices(String services) {
         this.services = services;
     }
 }

@@ -1,4 +1,4 @@
-package tsi.course.work.contrants;
+package tsi.course.work.contrants.data;
 
 public enum Services {
 

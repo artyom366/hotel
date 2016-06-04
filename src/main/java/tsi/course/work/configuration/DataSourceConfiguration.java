@@ -19,7 +19,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = "tsi.course.work.")
+@EnableJpaRepositories(basePackages = "tsi.course.work")
 public class DataSourceConfiguration {
 
     @Value("${spring.datasource.driverClassName}")
@@ -63,7 +63,7 @@ public class DataSourceConfiguration {
         LocalSessionFactoryBean localSessionFactoryBean = new LocalSessionFactoryBean();
         localSessionFactoryBean.setDataSource(dataSource);
         localSessionFactoryBean.setHibernateProperties(hibernateProperties());
-        localSessionFactoryBean.setPackagesToScan("lv.proq.ui.domain");
+        localSessionFactoryBean.setPackagesToScan("tsi.course.work");
         return localSessionFactoryBean;
     }
 
@@ -83,7 +83,7 @@ public class DataSourceConfiguration {
                 = new LocalContainerEntityManagerFactoryBean();
         localContainerEntityManagerFactoryBean.setDataSource(dataSource);
         localContainerEntityManagerFactoryBean.setJpaVendorAdapter(hibernateJpaVendorAdapter);
-        localContainerEntityManagerFactoryBean.setPackagesToScan("lv.proq.ui.domain");
+        localContainerEntityManagerFactoryBean.setPackagesToScan("tsi.course.work");
         return localContainerEntityManagerFactoryBean;
     }
 

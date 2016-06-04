@@ -32,7 +32,6 @@ public class Balance {
         this.id = id;
     }
 
-
     public String getDescription() {
         return description;
     }

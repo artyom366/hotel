@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="overview" extends="base.definition">
+        <put-attribute name="title" value="ProQ"/>
+        <put-attribute name="header" value="/WEB-INF/tiles/main/main_header.jsp"/>
+        <put-attribute name="menu" value=""/>
+        <put-attribute name="body">
+            <definition template="/WEB-INF/views/menu_layout.jsp">
+                <put-attribute name="tab_layout">
+                    <definition template="/WEB-INF/views/tab_layout.jsp">
+                        <put-attribute name="tab_body" value="/WEB-INF/tiles/main/tabs/overview.jsp"/>
+                    </definition>
+                </put-attribute>
+            </definition>
+        </put-attribute>
+        <put-attribute name="footer" value=""/>
+    </definition>
+
+    <definition name="customer" extends="base.definition">
+        <put-attribute name="title" value="ProQ"/>
+        <put-attribute name="header" value="/WEB-INF/tiles/main/main_header.jsp"/>
+        <put-attribute name="menu" value=""/>
+        <put-attribute name="body">
+            <definition template="/WEB-INF/views/menu_layout.jsp">
+                <put-attribute name="tab_layout">
+                    <definition template="/WEB-INF/views/tab_layout.jsp">
+                        <put-attribute name="tab_body" value="/WEB-INF/tiles/main/tabs/customer.jsp"/>
+                    </definition>
+                </put-attribute>
+            </definition>
+        </put-attribute>
+        <put-attribute name="footer" value=""/>
+    </definition>
+
+    <definition name="add_customer" extends="base.definition">
+        <put-attribute name="title" value="ProQ"/>
+        <put-attribute name="header" value="/WEB-INF/tiles/main/main_header.jsp"/>
+        <put-attribute name="menu" value=""/>
+        <put-attribute name="body">
+            <definition template="/WEB-INF/views/menu_layout.jsp">
+                <put-attribute name="tab_layout">
+                    <definition template="/WEB-INF/views/tab_layout.jsp">
+                        <put-attribute name="tab_body" value="/WEB-INF/tiles/main/tabs/add_customer.jsp"/>
+                    </definition>
+                </put-attribute>
+            </definition>
+        </put-attribute>
+        <put-attribute name="footer" value=""/>
+    </definition>
+</tiles-definitions>
