@@ -11,8 +11,15 @@ public class Services {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "services")
-    private String services;
+    @Column(name = "service")
+    private String service;
+
+    public Services() {
+    }
+
+    public Services(final String service) {
+        this.service = service;
+    }
 
     public Long getId() {
         return id;
@@ -22,11 +29,11 @@ public class Services {
         this.id = id;
     }
 
-    public String getServices() {
-        return services;
+    public String getService() {
+        return service;
     }
 
-    public void setServices(String services) {
-        this.services = services;
+    public void setService(String service) {
+        this.service = service;
     }
 }

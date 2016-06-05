@@ -8,7 +8,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.util.Date;
-import java.util.List;
 
 public class CustomerTO {
 
@@ -24,7 +23,7 @@ public class CustomerTO {
     private String middleName;
 
     @NotNull
-    private Date birthDate;
+    private String birthDate;
 
     @NotNull
     private Gender gender;
@@ -35,20 +34,20 @@ public class CustomerTO {
     @NotBlank
     private String identificationNumber;
 
-    @Pattern(regexp=".+@.+\\..+")
+    @Pattern(regexp = ".+@.+\\..+")
     private String email;
 
     @NotBlank
     private String phone;
 
     @NotNull
-    private Date checkIn;
+    private String checkIn;
 
     @NotNull
-    private Date checkOut;
+    private String checkOut;
 
-    private List<String> additionalServices;
-    private List<String> specialTreatment;
+    private String service;
+    private String treatment;
 
     public String getName() {
         return name;
@@ -74,11 +73,11 @@ public class CustomerTO {
         this.middleName = middleName;
     }
 
-    public Date getBirthDate() {
+    public String getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
 
@@ -122,35 +121,35 @@ public class CustomerTO {
         this.phone = phone;
     }
 
-    public Date getCheckIn() {
+    public String getCheckIn() {
         return checkIn;
     }
 
-    public void setCheckIn(Date checkIn) {
+    public void setCheckIn(String checkIn) {
         this.checkIn = checkIn;
     }
 
-    public Date getCheckOut() {
+    public String getCheckOut() {
         return checkOut;
     }
 
-    public void setCheckOut(Date checkOut) {
+    public void setCheckOut(String checkOut) {
         this.checkOut = checkOut;
     }
 
-    public List<String> getAdditionalServices() {
-        return additionalServices;
+    public String getService() {
+        return service;
     }
 
-    public void setAdditionalServices(List<String> additionalServices) {
-        this.additionalServices = additionalServices;
+    public void setService(String service) {
+        this.service = service;
     }
 
-    public List<String> getSpecialTreatment() {
-        return specialTreatment;
+    public String getTreatment() {
+        return treatment;
     }
 
-    public void setSpecialTreatment(List<String> specialTreatment) {
-        this.specialTreatment = specialTreatment;
+    public void setTreatment(String treatment) {
+        this.treatment = treatment;
     }
 }

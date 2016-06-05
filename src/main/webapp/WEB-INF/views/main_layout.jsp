@@ -16,6 +16,7 @@
     <link href="${pageContext.request.contextPath}/stat/css/bootstrap.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/stat/css/dashboard.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/stat/css/custom.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/stat/css/datepicker.css" rel="stylesheet">
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
 
@@ -30,6 +31,7 @@
 
     <script src="${pageContext.request.contextPath}/stat/js/jquery-1.12.0.min.js"></script>
     <script src="${pageContext.request.contextPath}/stat/js/jquery-2.2.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/stat/js/bootstrap-datepicker.js"></script>
 
     <title><tiles:insertAttribute name="title"/></title>
 </head>
