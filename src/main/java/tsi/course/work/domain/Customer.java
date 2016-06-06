@@ -3,9 +3,11 @@ package tsi.course.work.domain;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import tsi.course.work.contrants.data.Gender;
+import tsi.course.work.controllers.roon.RoomController;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "customer")
@@ -27,6 +29,7 @@ public class Customer {
     @Column(name = "birth_date")
     private Date birthDate;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "gender")
     private Gender gender;
 
@@ -58,6 +61,15 @@ public class Customer {
 
     @Column(name = "is_active_customer")
     private Boolean isActiveCustomer;
+
+    @OneToOne
+    private Apartment apartments;
+
+    @OneToMany
+    private List<Services> services;
+
+    @OneToOne
+    private Treatment treatment;
 
     public Long getId() {
         return id;
@@ -177,5 +189,29 @@ public class Customer {
 
     public void setActiveCustomer(Boolean activeCustomer) {
         isActiveCustomer = activeCustomer;
+    }
+
+    public Apartment getApartments() {
+        return apartments;
+    }
+
+    public void setApartments(Apartment apartments) {
+        this.apartments = apartments;
+    }
+
+    public List<Services> getServices() {
+        return services;
+    }
+
+    public void setServices(List<Services> services) {
+        this.services = services;
+    }
+
+    public Treatment getTreatment() {
+        return treatment;
+    }
+
+    public void setTreatment(Treatment treatment) {
+        this.treatment = treatment;
     }
 }

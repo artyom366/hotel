@@ -8,78 +8,106 @@
     </div>
 </div>
 
-<div class="container col-md-3 col-md-offset-4">
+<div class="container col-md-12 col-sm-offset-2">
 
     <sf:form method="POST" action="${pageContext.request.contextPath}/add_customer" modelAttribute="add_customer">
+        <div class="col-md-4 form-group">
+            <fieldset class="form-group">
+                <label for="apartment">Apartment</label>
+                <sf:select class="form-control" id="gender" path="apartment" required="">
+                    <option class="select-placeholder" value="" hidden>Select Apartment</option>
 
-        <h2>Customer information</h2>
+                    <c:forEach items="${apartments}" var="apartment">
+                        <option><c:out value="${apartment.number}"/></option>
+                    </c:forEach>
 
-        <div class="form-group">
-            <label for="dpd1">Check In</label>
-            <sf:input type="text" class="form-control span2" value="" id="dpd1" path="checkIn" placeholder="Check Out" required=""/>
-            <span class="label label-warning"><sf:errors path="checkIn"/></span>
+                </sf:select>
+                <span class="label label-warning"><sf:errors path="gender"/></span>
+            </fieldset>
+            <div class="form-group">
+                <label for="dpd1">Check In</label>
+                <sf:input type="text" class="form-control span2" value="" id="dpd1" path="checkIn" placeholder="Check Out" required=""/>
+                <span class="label label-warning"><sf:errors path="checkIn"/></span>
+            </div>
+            <div class="form-group">
+                <label for="dpd2">Check Out</label>
+                <sf:input type="text" class="form-control span2" value="" id="dpd2" path="checkOut" placeholder="Check Out" required=""/>
+                <span class="label label-warning"><sf:errors path="checkOut"/></span>
+            </div>
+            <div class="form-group">
+                <label for="customer-name">Name</label>
+                <sf:input type="text" class="form-control" id="customer-name" path="name" placeholder="Name" required=""/>
+                <span class="label label-warning"><sf:errors path="name"/></span>
+            </div>
+            <div class="form-group">
+                <label for="surname">Surname</label>
+                <sf:input type="text" class="form-control" id="surname" path="surname" placeholder="Surname" required=""/>
+                <span class="label label-warning"><sf:errors path="surname"/></span>
+            </div>
+            <div class="form-group">
+                <label for="middle-name">Middle Name</label>
+                <sf:input type="text" class="form-control" id="middle-name" path="middleName" placeholder="Middle Name"/>
+                <span class="label label-warning"><sf:errors path="middleName"/></span>
+            </div>
+            <fieldset class="form-group">
+                <label for="gender">Gender</label>
+                <sf:select class="form-control" id="gender" path="gender" required="">
+                    <option class="select-placeholder" value="" hidden>Select Gender</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </sf:select>
+                <span class="label label-warning"><sf:errors path="gender"/></span>
+            </fieldset>
         </div>
-        <div class="form-group">
-            <label for="dpd2">Check Out</label>
-            <sf:input type="text" class="form-control span2" value="" id="dpd2" path="checkOut" placeholder="Check Out" required=""/>
-            <span class="label label-warning"><sf:errors path="checkOut"/></span>
+
+        <div class="col-md-4 form-group">
+            <div class="form-group">
+                <label for="dp1">Birth Date</label>
+                <sf:input type="text" class="form-control span2" id="dp1" path="birthDate" placeholder="Birth Date" required=""/>
+                <span class="label label-warning"><sf:errors path="birthDate"/></span>
+            </div>
+            <div class="form-group">
+                <label for="accompanied">Accompanied</label>
+                <sf:input type="text" class="form-control" id="accompanied" path="accompanied" placeholder="Accompanied"/>
+                <span class="label label-warning"><sf:errors path="accompanied"/></span>
+            </div>
+            <div class="form-group">
+                <label for="identification-number">Identification Number</label>
+                <sf:input type="text" class="form-control" id="identification-number" path="identificationNumber"
+                          placeholder="Identification Number"/>
+                <span class="label label-warning"><sf:errors path="identificationNumber"/></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <sf:input type="text" class="form-control" id="email" path="email" placeholder="Email" required=""/>
+                <span class="label label-warning"><sf:errors path="email"/></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Phone</label>
+                <sf:input type="text" class="form-control" id="email" path="phone" placeholder="Phone" required=""/>
+                <span class="label label-warning"><sf:errors path="phone"/></span>
+            </div>
+            <fieldset class="form-group">
+                <label for="service">Services</label>
+                <sf:select multiple="true" class="form-control" id="service" path="service">
+
+                    <c:forEach items="${services}" var="service">
+                        <option><c:out value="${service.service}"/></option>
+                    </c:forEach>
+
+                </sf:select>
+            </fieldset>
+            <div class="form-group">
+                <label for="treatment">Special Treatments</label>
+                <sf:textarea class="form-control" rows="5" id="treatment" path="treatment"></sf:textarea>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="customer-name">Name</label>
-            <sf:input type="text" class="form-control" id="customer-name" path="name" placeholder="Name" required=""/>
-            <span class="label label-warning"><sf:errors path="name"/></span>
-        </div>
-        <div class="form-group">
-            <label for="surname">Surname</label>
-            <sf:input type="text" class="form-control" id="surname" path="surname" placeholder="Surname" required=""/>
-            <span class="label label-warning"><sf:errors path="surname"/></span>
-        </div>
-        <div class="form-group">
-            <label for="middle-name">Middle Name</label>
-            <sf:input type="text" class="form-control" id="middle-name" path="middleName" placeholder="Middle Name"/>
-            <span class="label label-warning"><sf:errors path="middleName"/></span>
-        </div>
-        <div class="form-group">
-            <label for="gender">Gender</label>
-            <sf:input type="text" class="form-control" id="gender" path="gender" placeholder="Gender"/>
-            <span class="label label-warning"><sf:errors path="gender"/></span>
-        </div>
-        <div class="form-group">
-            <label for="dp1">Birth Date</label>
-            <sf:input type="text" class="form-control span2" id="dp1" path="birthDate" placeholder="Check Out" required=""/>
-            <span class="label label-warning"><sf:errors path="birthDate"/></span>
-        </div>
-        <div class="form-group">
-            <label for="accompanied">Accompanied</label>
-            <sf:input type="text" class="form-control" id="accompanied" path="accompanied" placeholder="Accompanied"/>
-            <span class="label label-warning"><sf:errors path="accompanied"/></span>
-        </div>
-        <div class="form-group">
-            <label for="identification-number">Identification Number</label>
-            <sf:input type="text" class="form-control" id="identification-number" path="identificationNumber"
-                      placeholder="Identification Number"/>
-            <span class="label label-warning"><sf:errors path="identificationNumber"/></span>
-        </div>
-        <div class="form-group">
-            <label for="email">Email address</label>
-            <sf:input type="text" class="form-control" id="email" path="email" placeholder="Email" required=""/>
-            <span class="label label-warning"><sf:errors path="email"/></span>
-        </div>
-        <div class="form-group">
-            <label for="email">Phone</label>
-            <sf:input type="text" class="form-control" id="email" path="phone" placeholder="Phone" required=""/>
-            <span class="label label-warning"><sf:errors path="phone"/></span>
-        </div>
-        <div class="form-group">
-            <label for="service">Additional Services</label>
-            <sf:textarea class="form-control" rows="5" id="service" path="service"></sf:textarea>
-        </div>
-        <div class="form-group">
-            <label for="treatment">Special Treatments</label>
-            <sf:textarea class="form-control" rows="5" id="treatment" path="treatment"></sf:textarea>
-        </div>
-        <div class="registration-form-submit">
-            <button type="submit" class="btn btn-success">Create</button>
+
+        <div class="col-md-6 col-sm-offset-1 form-group">
+            <div class="registration-form-submit">
+                <button type="submit" class="btn btn-success">Create</button>
+            </div>
         </div>
     </sf:form>
 
@@ -118,11 +146,13 @@
         }).data('datepicker');
     </script>
 
-    <hr>
 
-    <footer>
-        <p>&copy; 2016 Proq, LLC.</p>
-    </footer>
+    <div class="col-md-12 form-group">
+        <hr>
+        <footer>
+            <p>&copy; 2016 Proq, LLC.</p>
+        </footer>
+    </div>
 
 </div>
 

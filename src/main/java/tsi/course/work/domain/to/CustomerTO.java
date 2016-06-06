@@ -2,13 +2,17 @@ package tsi.course.work.domain.to;
 
 
 import org.hibernate.validator.constraints.NotBlank;
-import tsi.course.work.contrants.data.Gender;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import java.util.List;
+
 
 public class CustomerTO {
+
+    @NotBlank
+    private String apartment;
 
     @NotBlank
     @Size(min = 1, max = 50)
@@ -25,7 +29,7 @@ public class CustomerTO {
     private String birthDate;
 
     @NotNull
-    private Gender gender;
+    private String gender;
 
     @NotNull
     private Integer accompanied;
@@ -45,8 +49,17 @@ public class CustomerTO {
     @NotBlank
     private String checkOut;
 
-    private String service;
+    private List<String> service;
+
     private String treatment;
+
+    public String getApartment() {
+        return apartment;
+    }
+
+    public void setApartment(String apartment) {
+        this.apartment = apartment;
+    }
 
     public String getName() {
         return name;
@@ -80,11 +93,11 @@ public class CustomerTO {
         this.birthDate = birthDate;
     }
 
-    public Gender getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(Gender gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
@@ -136,11 +149,11 @@ public class CustomerTO {
         this.checkOut = checkOut;
     }
 
-    public String getService() {
+    public List<String> getService() {
         return service;
     }
 
-    public void setService(String service) {
+    public void setService(List<String> service) {
         this.service = service;
     }
 

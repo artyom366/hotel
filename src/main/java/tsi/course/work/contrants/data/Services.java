@@ -7,7 +7,8 @@ public enum Services {
     SPA("SPA"),
     CLUB("CLUB"),
     KIDS_SECTION("KIDS_SECTION"),
-    CAR_RENT("CAR_RENT");
+    CAR_RENT("CAR_RENT"),
+    BAR("BAR");
 
     private final String services;
 

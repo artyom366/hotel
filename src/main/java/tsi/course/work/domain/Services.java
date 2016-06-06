@@ -11,14 +11,11 @@ public class Services {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "service")
-    private String service;
+    private tsi.course.work.contrants.data.Services service;
 
     public Services() {
-    }
-
-    public Services(final String service) {
-        this.service = service;
     }
 
     public Long getId() {
@@ -29,11 +26,11 @@ public class Services {
         this.id = id;
     }
 
-    public String getService() {
+    public tsi.course.work.contrants.data.Services getService() {
         return service;
     }
 
-    public void setService(String service) {
+    public void setService(tsi.course.work.contrants.data.Services service) {
         this.service = service;
     }
 }

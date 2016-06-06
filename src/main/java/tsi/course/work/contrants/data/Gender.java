@@ -2,9 +2,9 @@ package tsi.course.work.contrants.data;
 
 public enum Gender {
 
-    MALE("M"),
-    FEMALE("F"),
-    OTHER("O");
+    MALE("Male"),
+    FEMALE("Female"),
+    OTHER("Other");
 
     private final String gender;
 

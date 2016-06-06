@@ -2,10 +2,10 @@ package tsi.course.work.contrants.data;
 
 public enum Direction {
 
-    NORTH("N"),
-    SOUTH("S"),
-    WEST("W"),
-    EAST("E");
+    NORTH("NORTH"),
+    SOUTH("SOUTH"),
+    WEST("WEST"),
+    EAST("EAST");
 
     private final String direction;
 

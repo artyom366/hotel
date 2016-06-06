@@ -31,6 +31,7 @@ public class Apartment {
     @Column(name = "taken_to")
     private Date takenTo;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "direction")
     private Direction direction;
 
