@@ -7,7 +7,6 @@ import tsi.course.work.contrants.data.Gender;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
-import java.util.Date;
 
 public class CustomerTO {
 
@@ -40,10 +39,10 @@ public class CustomerTO {
     @NotBlank
     private String phone;
 
-    @NotNull
+    @NotBlank
     private String checkIn;
 
-    @NotNull
+    @NotBlank
     private String checkOut;
 
     private String service;

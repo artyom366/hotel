@@ -60,17 +60,17 @@
             <sf:input type="text" class="form-control" id="email" path="phone" placeholder="Phone" required=""/>
             <span class="label label-warning"><sf:errors path="phone"/></span>
         </div>
-        <div class="form-group">
-            <label for="check_in">Check In Date</label>
-            <sf:input type="text" class="form-control" id="check_in" path="checkIn" placeholder="Check In" required=""/>
-            <span class="label label-warning"><sf:errors path="checkIn"/></span>
-        </div>
-        <div class="form-group">
-            <label for="check_out">Check Out Date</label>
-            <sf:input type="text" class="form-control" id="check_out" path="checkOut" placeholder="Check Out"
-                      required=""/>
-            <span class="label label-warning"><sf:errors path="checkOut"/></span>
-        </div>
+        <%--<div class="form-group">--%>
+            <%--<label for="check_in">Check In Date</label>--%>
+            <%--<sf:input type="text" class="form-control" id="check_in" path="checkIn" placeholder="Check In" required=""/>--%>
+            <%--<span class="label label-warning"><sf:errors path="checkIn"/></span>--%>
+        <%--</div>--%>
+        <%--<div class="form-group">--%>
+            <%--<label for="check_out">Check Out Date</label>--%>
+            <%--<sf:input type="text" class="form-control" id="check_out" path="checkOut" placeholder="Check Out"--%>
+                      <%--required=""/>--%>
+            <%--<span class="label label-warning"><sf:errors path="checkOut"/></span>--%>
+        <%--</div>--%>
 
         <div class="form-group">
             <label for="service">Additional Services</label>
@@ -82,10 +82,17 @@
             <sf:textarea class="form-control" rows="5" id="treatment" path="treatment"></sf:textarea>
         </div>
 
+        <div class="form-group">
+            <label for="dpd1">Check In</label>
+            <sf:input type="text" class="form-control span2" value="" id="dpd1" path="checkIn" placeholder="Check Out" required=""/>
+            <span class="label label-warning"><sf:errors path="checkIn"/></span>
+        </div>
 
-        <input type="text" class="span2" value="" id="dpd1">
-        <input type="text" class="span2" value="" id="dpd2">
-
+        <div class="form-group">
+            <label for="dpd2">Check Out</label>
+            <sf:input type="text" class="form-control span2" value="" id="dpd2" path="checkOut" placeholder="Check Out" required=""/>
+            <span class="label label-warning"><sf:errors path="checkOut"/></span>
+        </div>
 
         <div class="well">
             <input type="text" class="span2" value="02-16-2012" id="dp1">
