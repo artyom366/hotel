@@ -15,6 +15,16 @@
         <h2>Customer information</h2>
 
         <div class="form-group">
+            <label for="dpd1">Check In</label>
+            <sf:input type="text" class="form-control span2" value="" id="dpd1" path="checkIn" placeholder="Check Out" required=""/>
+            <span class="label label-warning"><sf:errors path="checkIn"/></span>
+        </div>
+        <div class="form-group">
+            <label for="dpd2">Check Out</label>
+            <sf:input type="text" class="form-control span2" value="" id="dpd2" path="checkOut" placeholder="Check Out" required=""/>
+            <span class="label label-warning"><sf:errors path="checkOut"/></span>
+        </div>
+        <div class="form-group">
             <label for="customer-name">Name</label>
             <sf:input type="text" class="form-control" id="customer-name" path="name" placeholder="Name" required=""/>
             <span class="label label-warning"><sf:errors path="name"/></span>
@@ -33,6 +43,11 @@
             <label for="gender">Gender</label>
             <sf:input type="text" class="form-control" id="gender" path="gender" placeholder="Gender"/>
             <span class="label label-warning"><sf:errors path="gender"/></span>
+        </div>
+        <div class="form-group">
+            <label for="dp1">Birth Date</label>
+            <sf:input type="text" class="form-control span2" id="dp1" path="birthDate" placeholder="Check Out" required=""/>
+            <span class="label label-warning"><sf:errors path="birthDate"/></span>
         </div>
         <div class="form-group">
             <label for="accompanied">Accompanied</label>
@@ -63,22 +78,6 @@
             <label for="treatment">Special Treatments</label>
             <sf:textarea class="form-control" rows="5" id="treatment" path="treatment"></sf:textarea>
         </div>
-        <div class="form-group">
-            <label for="dpd1">Check In</label>
-            <sf:input type="text" class="form-control span2" value="" id="dpd1" path="checkIn" placeholder="Check Out" required=""/>
-            <span class="label label-warning"><sf:errors path="checkIn"/></span>
-        </div>
-        <div class="form-group">
-            <label for="dpd2">Check Out</label>
-            <sf:input type="text" class="form-control span2" value="" id="dpd2" path="checkOut" placeholder="Check Out" required=""/>
-            <span class="label label-warning"><sf:errors path="checkOut"/></span>
-        </div>
-        <div class="form-group">
-            <label for="dp1">Birth Date</label>
-            <sf:input type="text" class="form-control span2" value="02-16-2012" id="dp1" path="birthDate" placeholder="Check Out" required=""/>
-            <span class="label label-warning"><sf:errors path="birthDate"/></span>
-        </div>
-
         <div class="registration-form-submit">
             <button type="submit" class="btn btn-success">Create</button>
         </div>
@@ -86,16 +85,17 @@
 
 
     <script>
-        var bd = $('#dp1').datepicker({
+        var birthDate = $('#dp1').datepicker({
             format: 'mm-dd-yyyy'
         }).on('changeDate', function(ev) {
-            bd.hide();
+            birthDate.hide();
         }).data('datepicker');
 
         var nowTemp = new Date();
         var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
 
         var checkin = $('#dpd1').datepicker({
+            format: 'mm-dd-yyyy',
             onRender: function(date) {
                 return date.valueOf() < now.valueOf() ? 'disabled' : '';
             }
@@ -109,6 +109,7 @@
             $('#dpd2')[0].focus();
         }).data('datepicker');
         var checkout = $('#dpd2').datepicker({
+            format: 'mm-dd-yyyy',
             onRender: function(date) {
                 return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
             }
