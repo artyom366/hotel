@@ -30,11 +30,6 @@
             <span class="label label-warning"><sf:errors path="middleName"/></span>
         </div>
         <div class="form-group">
-            <label for="birth-date">Birth Date</label>
-            <sf:input type="text" class="form-control" id="birth-date" path="birthDate" value="01/01/2015 - 01/31/2015"/>
-            <span class="label label-warning"><sf:errors path="birthDate"/></span>
-        </div>
-        <div class="form-group">
             <label for="gender">Gender</label>
             <sf:input type="text" class="form-control" id="gender" path="gender" placeholder="Gender"/>
             <span class="label label-warning"><sf:errors path="gender"/></span>
@@ -60,44 +55,29 @@
             <sf:input type="text" class="form-control" id="email" path="phone" placeholder="Phone" required=""/>
             <span class="label label-warning"><sf:errors path="phone"/></span>
         </div>
-        <%--<div class="form-group">--%>
-            <%--<label for="check_in">Check In Date</label>--%>
-            <%--<sf:input type="text" class="form-control" id="check_in" path="checkIn" placeholder="Check In" required=""/>--%>
-            <%--<span class="label label-warning"><sf:errors path="checkIn"/></span>--%>
-        <%--</div>--%>
-        <%--<div class="form-group">--%>
-            <%--<label for="check_out">Check Out Date</label>--%>
-            <%--<sf:input type="text" class="form-control" id="check_out" path="checkOut" placeholder="Check Out"--%>
-                      <%--required=""/>--%>
-            <%--<span class="label label-warning"><sf:errors path="checkOut"/></span>--%>
-        <%--</div>--%>
-
         <div class="form-group">
             <label for="service">Additional Services</label>
             <sf:textarea class="form-control" rows="5" id="service" path="service"></sf:textarea>
         </div>
-
         <div class="form-group">
             <label for="treatment">Special Treatments</label>
             <sf:textarea class="form-control" rows="5" id="treatment" path="treatment"></sf:textarea>
         </div>
-
         <div class="form-group">
             <label for="dpd1">Check In</label>
             <sf:input type="text" class="form-control span2" value="" id="dpd1" path="checkIn" placeholder="Check Out" required=""/>
             <span class="label label-warning"><sf:errors path="checkIn"/></span>
         </div>
-
         <div class="form-group">
             <label for="dpd2">Check Out</label>
             <sf:input type="text" class="form-control span2" value="" id="dpd2" path="checkOut" placeholder="Check Out" required=""/>
             <span class="label label-warning"><sf:errors path="checkOut"/></span>
         </div>
-
-        <div class="well">
-            <input type="text" class="span2" value="02-16-2012" id="dp1">
+        <div class="form-group">
+            <label for="dp1">Birth Date</label>
+            <sf:input type="text" class="form-control span2" value="02-16-2012" id="dp1" path="birthDate" placeholder="Check Out" required=""/>
+            <span class="label label-warning"><sf:errors path="birthDate"/></span>
         </div>
-
 
         <div class="registration-form-submit">
             <button type="submit" class="btn btn-success">Create</button>
@@ -106,9 +86,11 @@
 
 
     <script>
-        $('#dp1').datepicker({
+        var bd = $('#dp1').datepicker({
             format: 'mm-dd-yyyy'
-        });
+        }).on('changeDate', function(ev) {
+            bd.hide();
+        }).data('datepicker');
 
         var nowTemp = new Date();
         var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);

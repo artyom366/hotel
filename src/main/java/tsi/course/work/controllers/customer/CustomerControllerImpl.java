@@ -3,7 +3,6 @@ package tsi.course.work.controllers.customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -11,15 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import tsi.course.work.contrants.controller.BindingModel;
 import tsi.course.work.domain.Customer;
-import tsi.course.work.domain.Services;
 import tsi.course.work.domain.to.CustomerTO;
 import tsi.course.work.service.CustomerService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import java.util.Arrays;
-import java.util.List;
 
 import static tsi.course.work.contrants.controller.BindingModel.CUSTOMER_BINDING;
 import static tsi.course.work.contrants.controller.ControllerUrlPath.ADD_CUSTOMER;
